@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'blog/navbar.html' %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Plataforma Universitaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/style.css' %}" rel="stylesheet"> 
+</head>
+<body class="index-page d-flex flex-column min-vh-100">
+
+<div class="container my-5">
+    <div class="row mb-5">
+        <div class="col-12 left-panel text-center py-5">
+            <h1>PLATAFORMA DE APOYO<br>A LA DOCENCIA</h1>
+            <hr class="border-white w-50 mx-auto">
+            <p>Un espacio de aprendizaje autónomo, moderno y accesible para estudiantes universitarios.</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="buttons-grid">
+                <a href="{% url 'intro' %}" class="menu-button">Introducción a las Matemáticas</a>
+                <a href="#" class="menu-button">Cálculo I</a>
+                <a href="#" class="menu-button">Cálculo II</a>
+                <a href="#" class="menu-button">Álgebra Lineal</a>
+                <a href="#" class="menu-button">Ecuaciones Diferenciales</a>
+                <a href="#" class="menu-button">Probabilidades y Estadística</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-auto text-center py-4">
+    © 2025 Instituto de Matemáticas — Todos los derechos reservados
+</footer>
+
+<script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
