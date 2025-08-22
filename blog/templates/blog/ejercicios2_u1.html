@@ -1,0 +1,114 @@
+{% load static %}
+{% include 'blog/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Números</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+
+ 
+    <script>
+      MathJax = {
+        tex: {inlineMath: [['\\(','\\)'], ['$', '$']]}
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="ejercicios-body">
+
+    <main class="ejercicios-container">
+
+
+        <header class="ejercicios-header">
+            <h1 class="ejercicios-title">Ejercicios de Números</h1>
+            <p class="ejercicios-subtitle">Practica y refuerza tus conocimientos sobre conjuntos numéricos</p>
+        </header>
+
+    
+        <section class="ejercicios-list">
+
+            <article class="ejercicio">
+                <p><strong>1.</strong> Señala la propiedad de los números reales que justifica cada igualdad:</p>
+                <p>(a) \( 5 + 0 = 5 \)</p>
+                <p>(b) \( 2 \cdot 1 = 2 \)</p>
+                <p>(c) \( 7 + (-7) = 0 \)</p>
+                <p>(d) \( (a+b)(a+b)^{-1} = 1 \), con \( a+b \neq 0 \)</p>
+                <p>(e) \( 0 + 0 = 0 \)</p>
+                <p>(f) \( 3 + 3 = 3 + 3 \)</p>
+                <p>(g) \( 5 \cdot (4 \cdot a) = (5 \cdot 4) \cdot a \)</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans1')">Mostrar Solución</button>
+                <div id="ans1" class="ejercicio-answer">
+                    (a) Neutro aditivo<br>
+                    (b) Neutro multiplicativo<br>
+                    (c) Inverso aditivo<br>
+                    (d) Inverso multiplicativo<br>
+                    (e) Neutro aditivo<br>
+                    (f) Conmutatividad de la adición<br>
+                    (g) Asociatividad de la multiplicación
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>2.</strong> Encontrar el error en el desarrollo que concluye con \(4 = 5\).</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans2')">Mostrar Solución</button>
+                <div id="ans2" class="ejercicio-answer">
+                    El error se comete en el paso (5), pues se asume que \( x^2 = y^2 \), lo cual no se cumple en general.
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>3.</strong> Calcular fracciones de números:</p>
+                <p>(a) \(\frac{3}{2}\) de \(\frac{1}{2}\) de 12</p>
+                <p>(b) \(\frac{5}{6}\) de \(\frac{1}{9}\) de 108</p>
+                <p>(c) \(\frac{5}{6}\) de los \(\frac{3}{5}\) del triple de 40</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans3')">Mostrar Solución</button>
+                <div id="ans3" class="ejercicio-answer">
+                    (a) 9<br>
+                    (b) 10<br>
+                    (c) 60
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>4.</strong> En un examen: Rosa < Mara, Laura < Edelmira, Noem = Sara, Rosa > Carmelina, Laura = Mara, Noem > Edelmira. Quién obtuvo más y quién menos puntos?</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans4')">Mostrar Solución</button>
+                <div id="ans4" class="ejercicio-answer">
+                    Más puntos: Sara y Noem<br>
+                    Menos puntos: Carmelina
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>5.</strong> Comprobar que si restas 1 al cuadrado de un número impar se obtiene siempre múltiplo de 8.</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans5')">Mostrar Solución</button>
+                <div id="ans5" class="ejercicio-answer">
+                    Observa que \((2n+1)^2 - 1 = 4n(n+1)\), siempre divisible por 8 ya que \(n(n+1)\) es par.
+                </div>
+            </article>
+
+        </section>
+
+        <div class="ejercicios-actions">
+            <a href="{% url 'numeros' %}" class="ejercicios-btn light">Volver atrás</a>
+        </div>
+
+    </main>
+
+    <footer class="ejercicios-footer">
+        © 2025 Instituto de Matemáticas - Todos los derechos reservados
+    </footer>
+
+    <script>
+        function toggleAnswer(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
+

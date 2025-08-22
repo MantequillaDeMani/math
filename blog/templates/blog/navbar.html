@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjuntos Numéricos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/css/navbar.css' %}">
+</head>
+<body>
+
+<nav class="navbar-clean">
+    <div class="navbar-container">
+
+        <a href="{% url 'pagina_css' %}" class="navbar-brand">
+            <img src="{% static 'blog/imagenes/logo.png' %}" alt="Logo" class="navbar-logo">
+            PAAD
+        </a>
+
+        <span class="navbar-text">¡Bienvenido/a!</span>
+    </div>
+</nav>
+
+</body>
+</html>

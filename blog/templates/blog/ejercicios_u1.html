@@ -1,0 +1,103 @@
+{% load static %}
+{% include 'blog/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Números</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="ejercicios-body">
+
+    <main class="ejercicios-container">
+
+   
+        <header class="ejercicios-header">
+            <h1 class="ejercicios-title">Ejercicios de Números</h1>
+            <p class="ejercicios-subtitle">Practica y refuerza tus conocimientos sobre conjuntos numéricos</p>
+        </header>
+
+
+        <section class="ejercicios-list">
+
+            <article class="ejercicio">
+                <p><strong>1.</strong> Determina si el número \( \frac{15}{4} \) es natural, entero, racional o irracional.</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans1')">Mostrar Solución</button>
+                <div id="ans1" class="ejercicio-answer">
+                    No es natural (\( \mathbb{N} \)).<br>
+                    No es entero (\( \mathbb{Z} \)).<br>
+                    Sí es racional (\( \mathbb{Q} \)).<br>
+                    No es irracional (\( \mathbb{Q}^c \)).
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>2.</strong> Convierte el número decimal periódico \(0.727272\ldots\) en una fracción y determina a qué conjunto numérico pertenece.</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans2')">Mostrar Solución</button>
+                <div id="ans2" class="ejercicio-answer">
+                    Sea \( x = 0.727272\ldots \)<br>
+                    \( 100x = 72.727272\ldots \)<br>
+                    \( 100x - x = 72 \Rightarrow x = \frac{72}{99} = \frac{8}{11} \)<br>
+                    Conjunto numérico: racional (\( \mathbb{Q} \))
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>3.</strong> Determina si \( \sqrt{2} \) es racional o irracional.</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans3')">Mostrar Solución</button>
+                <div id="ans3" class="ejercicio-answer">
+                    \( \sqrt{2} \) no puede expresarse como fracción.<br>
+                    Decimal infinito no periódico.<br>
+                    Por lo tanto, \( \sqrt{2} \in \mathbb{Q}^c \) (irracional).
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>4.</strong> Identifica a qué conjunto numérico pertenece cada número: \( -7, 0, \frac{1}{3}, \pi \)</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans4')">Mostrar Solución</button>
+                <div id="ans4" class="ejercicio-answer">
+                    -7 → entero (\( \mathbb{Z} \)), racional (\( \mathbb{Q} \))<br>
+                    0 → entero (\( \mathbb{Z} \)), racional (\( \mathbb{Q} \))<br>
+                    \( \frac{1}{3} \) → racional (\( \mathbb{Q} \))<br>
+                    \( \pi \) → irracional (\( \mathbb{Q}^c \))
+                </div>
+            </article>
+
+            <article class="ejercicio">
+                <p><strong>5.</strong> Decide si el número \(0.101001000100001\ldots\) es racional o irracional.</p>
+                <button class="ejercicio-btn" onclick="toggleAnswer('ans5')">Mostrar Solución</button>
+                <div id="ans5" class="ejercicio-answer">
+                    Decimal infinito no periódico.<br>
+                    No puede expresarse como fracción.<br>
+                    Por lo tanto, irracional (\( \mathbb{Q}^c \)).
+                </div>
+            </article>
+
+        </section>
+
+        <div class="ejercicios-actions">
+            
+            <a href="{% url 'numeros' %}" class="ejercicios-btn light">Volver atrás</a>
+        </div>
+
+    </main>
+
+    <footer class="ejercicios-footer">
+        © 2025 Instituto de Matemáticas - Todos los derechos reservados
+    </footer>
+
+    <script>
+        function toggleAnswer(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>

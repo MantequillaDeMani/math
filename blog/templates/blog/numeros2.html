@@ -1,0 +1,126 @@
+{% load static %}
+{% include 'blog/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades de los Números Reales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+
+    <script>
+      MathJax = {
+        tex: {inlineMath: [['\\(','\\)'], ['$', '$']]}
+      };
+    </script>
+    <script id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body class="materia-body">
+
+<main class="materia-container">
+
+
+    <header class="materia-header">
+        <h1 class="materia-title">Propiedades de los Números Reales</h1>
+        <p class="materia-subtitle">Símbolos, operaciones y desigualdades fundamentales</p>
+    </header>
+
+
+    <section class="materia-content">
+
+        <article class="materia-section">
+            <p>En álgebra es esencial manejar símbolos con objeto de transformar o reducir expresiones algebraicas y resolver ecuaciones. Muchos de estos símbolos representan números reales, por lo que es importante revisar el sistema de los números reales y algunas de sus propiedades fundamentales.</p>
+        </article>
+
+        <article class="materia-section">
+            <h2>Operaciones básicas</h2>
+            <p>En \( \mathbb{R} \) existen dos operaciones básicas: la adición y la multiplicación, anotadas por \( + \) y \( \cdot \) respectivamente.</p>
+            <ul>
+                <li><strong>Clausura:</strong> La suma y producto de dos números reales arbitrarios es un número real.</li>
+                <li><strong>Asociatividad:</strong> Para \( x, y, z \in \mathbb{R} \):
+                    <br>\( x + (y+z) = (x+y)+z \)
+                    <br>\( x(yz) = (xy)z \)
+                </li>
+                <li><strong>Elemento neutro:</strong> 
+                    <br>Neutro aditivo: \( x + 0 = x \)  
+                    <br>Neutro multiplicativo: \( x \cdot 1 = x \)
+                </li>
+                <li><strong>Elementos inversos:</strong>
+                    <br>Inverso aditivo: \( x + (-x) = 0 \)  
+                    <br>Inverso multiplicativo: \( x \cdot x^{-1} = 1 \) para \( x \neq 0 \)
+                </li>
+                <li><strong>Conmutatividad:</strong> Para \( x, y \in \mathbb{R} \):
+                    <br>\( x + y = y + x \), \( xy = yx \)
+                </li>
+            </ul>
+        </article>
+
+        <article class="materia-section">
+            <h2>Operaciones derivadas</h2>
+            <p>En \( \mathbb{R} \) también se definen:</p>
+            <ul>
+                <li>Sustracción: \( x - y = x + (-y) \)</li>
+                <li>División: \( x : y = x \cdot y^{-1} \), \( y \neq 0 \)</li>
+            </ul>
+        </article>
+
+        <article class="materia-section">
+            <h2>Propiedades generales</h2>
+            <p>Para \( a, b, c, d \in \mathbb{R} \) se cumple:</p>
+            <ul>
+                <li>Ley de simplificación: \( a+b = a+c \Rightarrow b = c \), \( ab = ac, a\neq 0 \Rightarrow b = c \)</li>
+                <li>Posibilidad de sustracción: \( a+x=b \Rightarrow x = b-a \)</li>
+                <li>Posibilidad de división: \( ax = b, a\neq 0 \Rightarrow x = b/a \)</li>
+                <li>Si \( ab=0 \), entonces \( a=0 \) o \( b=0 \)</li>
+                <li>\( \frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd} \)</li>
+                <li>\( \frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd} \), con \( b,d \neq 0 \)</li>
+            </ul>
+        </article>
+
+        <article class="materia-section">
+            <h2>Recta real</h2>
+            <p>Cada número real se puede identificar con un punto de una recta horizontal, donde un punto \( O \) representa el 0. Los números positivos se ubican a la derecha y los negativos a la izquierda.</p>
+            <p>Conjunto de números positivos: \( \mathbb{R}^+ \). Para todo \( a \in \mathbb{R} \), se cumple una y solo una de las siguientes afirmaciones: \( a \in \mathbb{R}^+ \), \( a=0 \), \( a \in \mathbb{R}^- \).</p>
+        </article>
+
+        <article class="materia-section">
+            <h2>Desigualdades</h2>
+            <p>Sean \( a, b \in \mathbb{R} \):</p>
+            <ul>
+                <li>Menor que: \( a<b \)</li>
+                <li>Mayor que: \( a>b \)</li>
+                <li>Menor o igual que: \( a \le b \)</li>
+                <li>Mayor o igual que: \( a \ge b \)</li>
+            </ul>
+            <p>Ejemplo: \( 2<x<5 \) significa \( x>2 \) y \( x<5 \).</p>
+        </article>
+
+        <article class="materia-section">
+            <h2>Valor absoluto</h2>
+            <p>Para \( a \in \mathbb{R} \), el valor absoluto se define como:</p>
+            <p>\( |a| = \begin{cases} a & \text{si } a \ge 0 \\ -a & \text{si } a < 0 \end{cases} \)</p>
+            <ul>
+                <li>\( |a| \ge 0 \)</li>
+                <li>\( |ab| = |a||b| \)</li>
+                <li>\( |a+b| \le |a|+|b| \)</li>
+                <li>\( |a-b| = |b-a| \)</li>
+            </ul>
+        </article>
+
+        <div class="materia-actions">
+            <a href="{% url 'pagina_css' %}" class="materia-btn">Volver al inicio</a>
+        </div>
+
+    </section>
+</main>
+
+<footer class="materia-footer">
+    © 2025 Instituto de Matemáticas - Todos los derechos reservados
+</footer>
+
+</body>
+</html>

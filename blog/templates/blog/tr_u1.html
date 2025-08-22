@@ -1,0 +1,64 @@
+{% load static %}
+{% include 'blog/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transición</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/style.css' %}" rel="stylesheet"> 
+</head>
+<body>
+    <main class="transicion-container">
+
+        <section class="transicion-intro">
+            <div class="intro-overlay">
+                <h1 class="transicion-heading">Introducción a las Matemáticas</h1>
+                <span class="heading-line"></span>
+                <p class="transicion-text">Números reales, expresiones algebraicas y trigonometría básica</p>
+            </div>
+        </section>
+
+        <section class="transicion-grid">
+            <article class="transicion-card">
+                <h3>Unidad 1</h3>
+                <p>Números Reales</p>
+                <div class="topic-actions">
+                    <a href="{% url 'numeros' %}" class="transicion-btn">Conceptos</a>
+                    <a href="{% url 'ejercicios' %}" class="transicion-btn light">Ejercicios</a>
+                    <a href="{% url 'numeros2' %}" class="transicion-btn">Propiedades</a>
+                    <a href="{% url 'ejercicios2_u1' %}" class="transicion-btn light">Ejercicios</a>
+                   
+                </div>
+            </article>
+
+            <article class="transicion-card">
+                <h3>Unidad 2</h3>
+                <p>Álgebra</p>
+                <div class="topic-actions">
+                    <a href="{% url 'numeros' %}" class="transicion-btn">Materia</a>
+                    <a href="{% url 'ejercicios' %}" class="transicion-btn light">Ejercicios</a>
+                </div>
+            </article>
+
+            <article class="transicion-card">
+                <h3>Unidad 3</h3>
+                <p>Geometría</p>
+                <div class="topic-actions">
+                    <a href="{% url 'numeros' %}" class="transicion-btn">Materia</a>
+                    <a href="{% url 'ejercicios' %}" class="transicion-btn light">Ejercicios</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="transicion-footer">
+        © 2025 Instituto de Matemáticas
+    </footer>
+
+    <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{% load static %}
+{% include 'blog/navbar.html' %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjuntos Numéricos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+
+    <script>
+      MathJax = {
+        tex: {inlineMath: [['\\(','\\)'], ['$', '$']]}
+      };
+    </script>
+    <script id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body class="materia-body">
+
+    <main class="materia-container">
+
+        <header class="materia-header">
+            <h1 class="materia-title">Conjuntos Numéricos</h1>
+            <p class="materia-subtitle">Revisión de los principales conjuntos y sus propiedades</p>
+        </header>
+
+        <section class="materia-content">
+
+            <article class="materia-section">
+                <h2>Números Naturales</h2>
+                <p>El conjunto de los números naturales, \( \mathbb{N} \), es:  
+                \( \mathbb{N} = \{1,2,3,4,5,6,\dots\} \).  
+                Es un conjunto con un primer elemento, ordenado e infinito. También se conoce como números enteros positivos.</p>
+            </article>
+
+            <article class="materia-section">
+                <h2>Números Enteros</h2>
+                <p>El conjunto de los números enteros, \( \mathbb{Z} \), es:  
+                \( \mathbb{Z} = \{\dots,-3,-2,-1,0,1,2,3,4,\dots\} \).</p>
+                <ul>
+                    <li>Un número entero \(a\) es factor o divisor de \(b\) si existe \(c\) tal que \(b = a \cdot c\).</li>
+                    <li>\(p>1\) es primo si solo tiene 1 y \(p\) como divisores; de lo contrario es compuesto.</li>
+                    <li>Un número entero es par si divisible por 2; si no, es impar.</li>
+                </ul>
+            </article>
+
+            <article class="materia-section">
+                <h2>Números Racionales</h2>
+                <p>\( \mathbb{Q} \) está formado por todas las fracciones \( \frac{a}{b} \) con \( a,b \in \mathbb{Z}, b \neq 0 \).</p>
+            </article>
+
+            <article class="materia-section">
+                <h2>Números Irracionales</h2>
+                <p>\( \mathbb{Q}^c \) incluye todos los decimales infinitos no periódicos. Ejemplos: \( \sqrt{2}, \pi, e, \dots \)</p>
+            </article>
+
+            <article class="materia-section">
+                <h2>Números Reales</h2>
+                <p>El conjunto de los números reales, \( \mathbb{R} = \mathbb{Q} \cup \mathbb{Q}^c \), combina racionales e irracionales.</p>
+            </article>
+
+            <article class="materia-section">
+                <h2>Resumen</h2>
+                <table class="materia-table">
+                    <thead>
+                        <tr>
+                            <th>Símbolo</th>
+                            <th>Sistema</th>
+                            <th>Descripción</th>
+                            <th>Ejemplos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>\(\mathbb{N}\)</td><td>Naturales</td><td>Números positivos</td><td>1,2,3,...</td></tr>
+                        <tr><td>\(\mathbb{Z}\)</td><td>Enteros</td><td>Positivos, negativos y 0</td><td>..., -2,-1,0,1,2,...</td></tr>
+                        <tr><td>\(\mathbb{Q}\)</td><td>Racionales</td><td>Fracciones</td><td>\(\tfrac{1}{2}, \tfrac{3}{4}, 5, 0.33...\)</td></tr>
+                        <tr><td>\(\mathbb{Q}^c\)</td><td>Irracionales</td><td>Decimales infinitos no periódicos</td><td>\(\sqrt{2}, \pi, e\)</td></tr>
+                        <tr><td>\(\mathbb{R}\)</td><td>Reales</td><td>Racionales + irracionales</td><td>2, 0.33..., 3, \(\pi, \sqrt{2}\)</td></tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <div class="materia-actions">
+                <a href="{% url 'pagina_css' %}" class="materia-btn">Volver al inicio</a>
+                <a href="{% url 'ejercicios' %}" class="materia-btn light">Practica</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="materia-footer">
+        © 2025 Instituto de Matemáticas - Todos los derechos reservados
+    </footer>
+
+    <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
