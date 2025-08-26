@@ -8,23 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'blog/css/style.css' %}" rel="stylesheet"> 
+    <link href="{% static 'blog/css/pdfs.css' %}" rel="stylesheet"> 
 </head>
 <body class="pdf-body">
     <div class="pdf-overlay">
         <h1 class="pdf-title">📂 Pruebas Unidad 1</h1>
+        
         <div class="pdf-list">
             {% for pdf in pdfs %}
                 <div class="pdf-item">
                     <span class="pdf-name">{{ pdf.name }}</span>
-                    <a href="{{ pdf.url }}" download class="pdf-btn-download">Descargar</a>
+                    <div class="pdf-actions">
+                  
+                        <a href="{{ pdf.url }}" target="_blank" class="pdf-btn-view">
+                             Ver
+                        </a>
+
+                        <a href="{{ pdf.url }}" download class="pdf-btn-download">
+                             Descargar
+                        </a>
+                    </div>
                 </div>
             {% empty %}
                 <p class="pdf-empty">No hay archivos PDF disponibles.</p>
             {% endfor %}
         </div>
-        <a href="{% url 'intro' %}" class="pdf-btn-back-home">Volver a Unidad 1</a>
 
-
+        <div class="text-center">
+            <a href="{% url 'intro' %}" class="pdf-btn-back-home"> Volver a Unidad 1</a>
+        </div>
     </div>
 </body>
 </html>
