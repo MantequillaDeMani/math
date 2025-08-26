@@ -83,18 +83,71 @@
                 </table>
             </article>
 
-            <div class="materia-actions">
-                <a href="{% url 'pagina_css' %}" class="materia-btn">Volver al inicio</a>
+            
+        </section>
+       <article class="materia-section">
+            <h2>Videos Recomendados</h2>
+            <p>Selecciona un video para ver:</p>
+
+            <div class="video-carousel">
+                <div class="video-track">
+                    <div class="video-slide">
+                        <iframe src="https://www.youtube.com/embed/wAPCSnAhhC8?list=RDwAPCSnAhhC8&start_radio=1"
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="video-slide">
+                        <iframe src="https://www.youtube.com/embed/BTYAsjAVa3I?list=RDBTYAsjAVa3I&start_radio=1"
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="video-slide">
+                        <iframe src="https://www.youtube.com/embed/n61ULEU7CO0?list=RDn61ULEU7CO0&start_radio=1"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </article>
+        <div class="materia-actions">
+                <a href="{% url 'intro' %}" class="materia-btn">Volver atrás</a>
                 <a href="{% url 'ejercicios' %}" class="materia-btn light">Practica</a>
             </div>
 
-        </section>
+
     </main>
 
     <footer class="materia-footer">
         © 2025 Instituto de Matemáticas - Todos los derechos reservados
     </footer>
 
-    <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+  <script>
+    const track = document.querySelector('.video-track');
+    const slides = Array.from(track.children);
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const width = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * width}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    </script>
+
+
+
 </body>
 </html>

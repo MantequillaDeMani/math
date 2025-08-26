@@ -32,4 +32,4 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/pagina/')),
     path('pagina/', auth_views.LoginView.as_view(template_name='blog/pagina.html'), name='pagina_css'),
  
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
